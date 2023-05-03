@@ -40,4 +40,4 @@ Using the parsing functionalities of `PowerModelsDistribution` (PMD) and `PowerM
 using nongaussiandsse_paper_data
 data = get_EU_LV_feeder_data()
 ```
-Check out the `data_parser.jl` file in this repository for line-by-line comments, including a pointer to the network reduction (of the so-called "superfluous" buses) functionalities.
+Check out the `src/data_parser.jl` file in this repository for line-by-line comments, including a pointer to the network reduction (of the so-called "superfluous" buses) functionalities.
