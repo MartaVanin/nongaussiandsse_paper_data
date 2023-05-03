@@ -41,3 +41,18 @@ using nongaussiandsse_paper_data
 data = get_EU_LV_feeder_data()
 ```
 Check out the `src/data_parser.jl` file in this repository for line-by-line comments, including a pointer to the network reduction (of the so-called "superfluous" buses) functionalities.
+
+### Gaussian vs non-Gaussian uncertainty
+
+After you create the basic data as above, you should decide which users are pseudo-measurements.
+For these, you replace the power assigned from the ENWL profiles with samples from a distribution.
+This is done in the paper for multiple random scenarios with 1) different users that are described by pseudo-measurements, and 2) different samples from the distributions that are used to create the basis for the power flow (see paper).
+
+You can build the distributions via the `PowerModelsDistributionStateEstimation` (_PMDSE), the `Polynomials` (_Poly) and the `Distributions` (_DST) packages, as follows (see paper for exact parameters).
+
+```julia
+beta_dist = _PMDSE.ExtendedBeta(1.6339,20.9022,-0.1, 8.268)
+poly_dist = _Poly.Polynomial(-4.630291662343674, 2.650491947483099, - 1.0353277265840206, 0.18351841296933727, 0.011696870297269948)
+gauss_dist = _DST.Normal(0.0, 1.0)
+```
+The paper reports which additional distributions are supported (e.g., GMM...).
