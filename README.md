@@ -56,3 +56,8 @@ poly_dist = _Poly.Polynomial(-4.630291662343674, 2.650491947483099, - 1.03532772
 gauss_dist = _DST.Normal(0.0, 1.0)
 ```
 The paper reports which additional distributions are supported (e.g., GMM...).
+
+### Additional information
+
+For questions about code, data, or paper, do not hesitate to contact me.
+You can find my email in the `Project.toml` file.
