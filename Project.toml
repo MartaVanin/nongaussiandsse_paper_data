@@ -1,0 +1,7 @@
+name = "nongaussiandsse_paper_data"
+uuid = "7766076a-ff64-4cb2-8299-1db65094a7c2"
+authors = ["MartaVanin <marta.vanin@esat.kuleuven.be>"]
+version = "0.1.0"
+
+[deps]
+PowerModelsDistributionStateEstimation = "d0713e65-ce0c-4a8e-a1da-2ed737d217c5"
